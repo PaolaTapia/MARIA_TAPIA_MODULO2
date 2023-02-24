@@ -28,9 +28,8 @@ main {
   flex-basis: 10rem;
 }
 
-.buscador {
+#buscador {
   display: flex;
-  height: 100px;
   flex-direction: column;
   flex-shrink: 0;
   flex-grow: 1;

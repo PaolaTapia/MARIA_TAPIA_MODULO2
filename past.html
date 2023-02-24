@@ -77,9 +77,13 @@
         </h2>
       </div>
 
-      <div class="buscador">
-        <div class="d-flex gap-5 justify-content-between">
-          <div class="flex-row list-group mx-0 w-auto justify-content-start">
+      <div id="buscador">
+        <div
+          class="flex-sm-column-reverse flex-md-column-reverse flex-lg-column d-flex gap-5 justify-content-between"
+        >
+          <div
+            class="flex-row list-group mx-0 w-auto justify-content-start row row-cols-sm-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-5 g-3"
+          >
             <label class="list-group-item d-flex gap-2">
               <input
                 class="form-check-input flex-shrink-0"
@@ -135,52 +139,11 @@
         </div>
       </div>
 
-      <div class="cards">
-        <div class="card mt-3" style="width: 18rem; height: 25rem">
-          <img
-            src="./assets/img/Museum_Tour.jpg"
-            class="card-img-top"
-            alt="..."
-          />
-          <div class="card-body">
-            <h5 class="card-title">Event</h5>
-            <p class="card-text">
-              Some quick example text to build on the Event and make up the bulk
-              of the card's content.
-            </p>
-            <a href="./details.html" class="btn btn-primary">More info...</a>
-          </div>
-        </div>
-        <div class="card mt-3" style="width: 18rem; height: 25rem">
-          <img
-            src="./assets/img/Museum_Tour.jpg"
-            class="card-img-top"
-            alt="..."
-          />
-          <div class="card-body">
-            <h5 class="card-title">Event</h5>
-            <p class="card-text">
-              Some quick example text to build on the Event and make up the bulk
-              of the card's content.
-            </p>
-            <a href="./details.html" class="btn btn-primary">More info...</a>
-          </div>
-        </div>
-        <div class="card mt-3" style="width: 18rem; height: 25rem">
-          <img
-            src="./assets/img/Museum_Tour.jpg"
-            class="card-img-top"
-            alt="..."
-          />
-          <div class="card-body">
-            <h5 class="card-title">Event</h5>
-            <p class="card-text">
-              Some quick example text to build on the Event and make up the bulk
-              of the card's content.
-            </p>
-            <a href="./details.html" class="btn btn-primary">More info...</a>
-          </div>
-        </div>
+      <div
+        id="cards"
+        class="d-flex justify-content-center align-content-center row row-cols-sm-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-5 g-3 mt-5"
+      >
+        <!-- insert cards -->
       </div>
     </main>
     <footer
@@ -236,6 +199,6 @@
     ></script>
     <script src="./assets/js/data.js"></script>
     <script src="./assets/js/main.js"></script>
-    <!-- <script src="./assets/js/past.js"></script> -->
+    <script src="./assets/js/past.js"></script>
   </body>
 </html>
