@@ -45,3 +45,20 @@ i {
   height: 20vh;
   width: auto;
 }
+
+
+/* .navbar-toggler {
+  border: none;
+}
+
+.navbar-toggler-icon {
+  width: 20px;
+  height: 20px;
+  background-size: cover;
+} */
+
+.navbar-toggler:focus,
+.navbar-toggler:active,
+.navbar-toggler:hover {
+  outline: none;
+}
