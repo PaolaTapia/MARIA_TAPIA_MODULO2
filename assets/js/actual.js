@@ -21,8 +21,11 @@ itemsCategorias.forEach(listItem => {
                     eventsCategorizados.push(resultado.filter(event => event.category === listItem.value))
 
             } else {
+
                 let aux = eventsCategorizados
+
                 eventsCategorizados = aux.filter(event => event[0].category !== listItem.value)
+
             }
 
             htmlResultadoPorCategoria = ""
@@ -82,17 +85,15 @@ function buscar() {
 
         if (eventsCategorizados.length === 0) {
             resultado = eventsPast.filter(event => event.name?.toUpperCase().includes(textoBusqueda.toUpperCase()))
-
             for (let event of resultado) {
                 htmlResultadoPorName += crearCard(event);
             }
         }
         else {
 
-            resultado = eventsCategorizados.filter(event => event[0].name.includes(textoBusqueda))
-
+            resultado = eventsCategorizados.filter(event => event[0].name?.toUpperCase().includes(textoBusqueda.toUpperCase()))
             for (let event of resultado) {
-                htmlResultadoPorName += crearCard(event);
+                htmlResultadoPorName += crearCard(event[0]);
 
             }
         }
