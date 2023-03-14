@@ -7,51 +7,105 @@ let categorias = document.getElementById("categorias")
 categorias.innerHTML = htmlCategories
 
 //FILTRO POR CATEGORIAS
-let itemCategorias = document.querySelectorAll('input[type=checkbox]')
+let itemsCategorias = document.querySelectorAll('input[type=checkbox]')
 
 let selected = []
 let eventsCategorizados = []
+let htmlResultadoPorCategoria = "";
 
-itemCategorias.forEach(listItem => listItem.onclick = () => {
-    let categoria = listItem.value;
-    let categoriaClickeada = listItem.checked;
+itemsCategorias.forEach(listItem => {
+    listItem.addEventListener('click', () => {
+        if (resultado.length !== 0) {
+            if (listItem.checked) {
+                if (!eventsCategorizados.includes(!resultado.filter(event => event.category === listItem.value)))
+                    eventsCategorizados.push(resultado.filter(event => event.category === listItem.value))
 
-    if (categoriaClickeada === true) {
-        let categoriaElegida = eventsPast.filter(event => event.category === categoria)
+            } else {
+                let aux = eventsCategorizados
+                eventsCategorizados = aux.filter(event => event[0].category !== listItem.value)
+            }
 
-        if (!selected.includes(categoriaElegida)) selected.push(categoriaElegida)
+            htmlResultadoPorCategoria = ""
 
-    } else {
-        let categoriaElegida = eventsPast.filter(event => event.category === categoria)
-        selected.pop(categoriaElegida)
-    }
+            for (let event of eventsCategorizados) {
 
-    let htmlResultadoPorCategoria = "";
-    for (let event of selected) {
-        eventsCategorizados.push(event)
-        htmlResultadoPorCategoria += crearCard(event[0]);
-    }
+                htmlResultadoPorCategoria += crearCard(event[0]);
+            }
+        } else {
 
-    if (selected.length === 0)
-        tarjetas.innerHTML = htmlEvents
-    else
-        tarjetas.innerHTML = htmlResultadoPorCategoria
-}
-)
+            if (listItem.checked) {
+                if (!eventsCategorizados.includes(!eventsPast.filter(event => event.category === listItem.value)))
+                    eventsCategorizados.push(eventsPast.filter(event => event.category === listItem.value))
 
-//FILTRO INPUT SEARCH
+            } else {
+                let aux = eventsCategorizados
+                eventsCategorizados = aux.filter(event => event[0].category !== listItem.value)
+            }
+
+            htmlResultadoPorCategoria = ""
+
+            for (let event of eventsCategorizados) {
+
+                htmlResultadoPorCategoria += crearCard(event[0]);
+
+            }
+
+        }
+
+        if (eventsCategorizados.length !== 0) {
+            tarjetas.innerHTML = htmlResultadoPorCategoria
+        }
+        else if (resultado.length === 0 && eventsCategorizados.length === 0) {
+            tarjetas.innerHTML = htmlEvents
+        }
+
+    })
+})
+
+
+// FILTRO INPUT SEARCH
 let inputSearch = document.querySelector('input[type="search"]')
 const log = document.getElementById("log");
 inputSearch.addEventListener("keyup", buscar);
 
-var textoBusqueda = ""
-var resultado = ""
-function buscar(e) {
+let textoBusqueda = ""
+let resultado = []
+let htmlResultadoPorName = ""
 
+inputSearch.addEventListener("onkeyup", buscar())
+
+function buscar() {
+    resultado = []
+    htmlResultadoPorName = ""
     textoBusqueda = inputSearch.value;
-    console.log('%c :::VER::::', 'background: yellow; color: black', eventsCategorizados)
-    console.log('%c :::VER::::', 'background: yellow; color: black', eventsPast)
-    eventsPast.filter(event => event.name === textoBusqueda)
+    if (textoBusqueda !== '') {
+
+        if (eventsCategorizados.length === 0) {
+            resultado = eventsPast.filter(event => event.name?.toUpperCase().includes(textoBusqueda.toUpperCase()))
+
+            for (let event of resultado) {
+                htmlResultadoPorName += crearCard(event);
+            }
+        }
+        else {
+
+            resultado = eventsCategorizados.filter(event => event[0].name.includes(textoBusqueda))
+
+            for (let event of resultado) {
+                htmlResultadoPorName += crearCard(event);
+
+            }
+        }
+        tarjetas.innerHTML = htmlResultadoPorName
+    } else {
+        if (eventsCategorizados.length !== 0) {
+            tarjetas.innerHTML = htmlResultadoPorCategoria
+        }
+        else if (resultado.length === 0 && eventsCategorizados.length === 0) {
+            tarjetas.innerHTML = htmlEvents
+        }
+    }
 }
+
 
 //onkeyup="buscar()"

@@ -18,7 +18,7 @@ function crearCard(event) {
         <p class="card-text">
         ${event.description}
         </p>
-        <a href="./details.html" class="btn btn-primary">More info...</a>
+        <a href="./details.html?id=${event._id}" class="btn btn-primary">More info...</a>
       </div>
     </div>`
 }
