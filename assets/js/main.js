@@ -29,6 +29,8 @@ function crearCategory(category) {
     class="form-check-input flex-shrink-0"
     type="checkbox"
     value="${category}"
+    name="category"
+    id="category"
   />
   <span> ${category}</span>
 </label>`
@@ -48,6 +50,8 @@ menuToggle.addEventListener('click', () => {
 
 
 let categories = []
+
+
 
 for (let event of data.events) {
   let currentDate = new Date(data.currentDate);
