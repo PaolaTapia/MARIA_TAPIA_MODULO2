@@ -25,6 +25,7 @@
         <img src="./assets/img/Logo.png" width="130" height="30" alt="Logo" />
       </a>
       <button
+        id="menu-toggle"
         class="navbar-toggler"
         type="button"
         data-toggle="collapse"
@@ -76,76 +77,41 @@
           >
         </h2>
       </div>
-
-      <div id="buscador">
-        <div
-          class="flex-sm-column-reverse flex-md-column-reverse flex-lg-column d-flex gap-5 justify-content-between"
-        >
+      <div>
+        <div id="buscador">
           <div
-            class="flex-row list-group mx-0 w-auto justify-content-start row row-cols-sm-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-5 g-3"
+            class="flex-sm-column-reverse flex-md-column-reverse flex-lg-column d-flex gap-5 justify-content-between"
           >
-            <label class="list-group-item d-flex gap-2">
-              <input
-                class="form-check-input flex-shrink-0"
-                type="checkbox"
-                value=""
-                checked=""
-              />
-              <span> Category</span>
-            </label>
-            <label class="list-group-item d-flex gap-2">
-              <input
-                class="form-check-input flex-shrink-0"
-                type="checkbox"
-                value=""
-              />
-              <span> Category</span>
-            </label>
-            <label class="list-group-item d-flex gap-2">
-              <input
-                class="form-check-input flex-shrink-0"
-                type="checkbox"
-                value=""
-              />
-              <span> Category</span>
-            </label>
-            <label class="list-group-item d-flex gap-2">
-              <input
-                class="form-check-input flex-shrink-0"
-                type="checkbox"
-                value=""
-              />
-              <span> Category</span>
-            </label>
-            <label class="list-group-item d-flex gap-2">
-              <input
-                class="form-check-input flex-shrink-0"
-                type="checkbox"
-                value=""
-              />
-              <span> Category</span>
-            </label>
-          </div>
-          <div class="flex-row list-group mx-0 w-auto">
-            <form class="col-12 col-lg-auto mb-3 mb-lg-0" role="search">
+            <div
+              id="categorias"
+              class="flex-row list-group mx-0 w-auto justify-content-start row row-cols-sm-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-5 g-3"
+            >
+              <!-- render filtro categorias  -->
+            </div>
+            <div class="flex-row list-group mx-0 w-auto">
+              <!-- <form class="col-12 col-lg-auto mb-3 mb-lg-0" role="search"> -->
               <input
                 type="search"
                 class="form-control"
                 placeholder="Search..."
                 aria-label="Search"
+                name="search"
+                id="search"
               />
-            </form>
+              <!-- </form> -->
+            </div>
           </div>
         </div>
-      </div>
 
-      <div
-        id="cards"
-        class="d-flex justify-content-center align-content-center row row-cols-sm-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-5 g-3 mt-5"
-      >
-        <!-- insert cards -->
+        <div
+          id="cards"
+          class="d-flex justify-content-center align-content-center row row-cols-sm-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-5 g-3 mt-5"
+        >
+          <!-- insert cards -->
+        </div>
       </div>
     </main>
+
     <footer
       class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top"
     >

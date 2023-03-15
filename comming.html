@@ -81,59 +81,24 @@
           class="d-flex gap-5 flex-sm-column-reverse flex-md-column-reverse flex-lg-column flex-sm-row justify-content-sm-between"
         >
           <div
+            id="categorias"
             class="flex-row list-group mx-0 w-auto justify-content-start row row-cols-sm-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-5 g-3"
           >
-            <label class="list-group-item d-flex gap-2">
-              <input
-                class="form-check-input flex-shrink-0"
-                type="checkbox"
-                value=""
-                checked=""
-              />
-              <span> Category</span>
-            </label>
-            <label class="list-group-item d-flex gap-2">
-              <input
-                class="form-check-input flex-shrink-0"
-                type="checkbox"
-                value=""
-              />
-              <span> Category</span>
-            </label>
-            <label class="list-group-item d-flex gap-2">
-              <input
-                class="form-check-input flex-shrink-0"
-                type="checkbox"
-                value=""
-              />
-              <span> Category</span>
-            </label>
-            <label class="list-group-item d-flex gap-2">
-              <input
-                class="form-check-input flex-shrink-0"
-                type="checkbox"
-                value=""
-              />
-              <span> Category</span>
-            </label>
-            <label class="list-group-item d-flex gap-2">
-              <input
-                class="form-check-input flex-shrink-0"
-                type="checkbox"
-                value=""
-              />
-              <span> Category</span>
-            </label>
+            <!-- render filtro categorias  -->
           </div>
+
           <div class="flex-row list-group mx-0 w-auto">
-            <form class="col-12 col-lg-auto mb-3 mb-lg-0" role="search">
-              <input
-                type="search"
-                class="form-control"
-                placeholder="Search..."
-                aria-label="Search"
-              />
-            </form>
+            <!-- <form class="col-12 col-lg-auto mb-3 mb-lg-0" role="search"> -->
+            <input
+              type="search"
+              class="form-control"
+              placeholder="Search..."
+              aria-label="Search"
+              name="search"
+              id="search"
+            />
+            <!-- </form> -->
+            <div id="log"></div>
           </div>
         </div>
       </div>
