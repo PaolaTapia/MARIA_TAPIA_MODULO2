@@ -2,11 +2,12 @@
 
 const getEvents = async () => {
   const res = await fetch('https://mindhub-xj03.onrender.com/api/amazing')
-  // data = res
-  // console.log('%c :::VER::::', 'background: red; color: black', res)
+
+
 }
 
-getEvents()
+let data1 = getEvents()
+
 
 let data = {
   "currentDate": "2022-01-01",
