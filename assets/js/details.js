@@ -2,13 +2,13 @@ const urlParams = new URLSearchParams(window.location.search);
 let detail = document.getElementById("detail")
 
 if (urlParams.has('id')) {
-    const id = urlParams.get('id');
+  const id = urlParams.get('id');
 
-    for (let event of data.events) {
-        if (event._id == id) {
-            console.log('%c :::VER::::', 'background: yellow; color: black', event)
+  for (let event of data.events) {
+    if (event._id == id) {
+      console.log('%c :::VER::::', 'background: yellow; color: black', event)
 
-            let detalle = `
+      let detalle = `
 
             <div class="col p-4 d-flex flex-column position-static">
         <strong class="d-inline-block mb-2 text-success">${event.name}</strong>
@@ -29,10 +29,7 @@ if (urlParams.has('id')) {
       </div>          
      
         `
-            detail.innerHTML = detalle
-        }
-
-
-
+      detail.innerHTML = detalle
     }
+  }
 }
