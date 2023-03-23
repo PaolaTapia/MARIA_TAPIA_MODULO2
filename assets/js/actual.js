@@ -52,12 +52,13 @@ function actual(data) {
         let eventosFiltrados = []
         htmlResultadoBusqueda = ""
 
+        console.log(data)
         //SI NO HAY TEXTO O CATEGORIAS SELECCIONADAS, MUESTRA TODO
         if (busqueda.search === '' && busqueda.categorias.length === 0) {
-            eventosFiltrados = data;
+            eventosFiltrados = eventsAll;
         } else if (busqueda.search !== '' && busqueda.categorias.length !== 0) {
             // SI HAY TEXTOS Y CATEGORIAS SELECCIONADAS
-            eventosFiltrados = data.filter(event =>
+            eventosFiltrados = eventsAll.filter(event =>
 
                 (event.name.toLowerCase().includes(busqueda.search.toLowerCase()) || event.description.toLowerCase().includes(busqueda.search.toLowerCase()))
                 &&
@@ -65,11 +66,11 @@ function actual(data) {
             )
         } else if (busqueda.categorias.length !== 0) {
             // SI HAY CATEGORIAS SELECCIONADAS
-            eventosFiltrados = eventosFiltrados = data.filter(event =>
+            eventosFiltrados = eventosFiltrados = eventsAll.filter(event =>
                 (busqueda.categorias.includes(event.category)))
         } else if (busqueda.search !== '') {
             // SI HAY SOLO TEXTOS DE BUSQUEDA
-            eventosFiltrados = eventosFiltrados = data.filter(event =>
+            eventosFiltrados = eventosFiltrados = eventsAll.filter(event =>
                 (event.name.toLowerCase().includes(busqueda.search.toLowerCase()) || event.description.toLowerCase().includes(busqueda.search.toLowerCase())))
         }
 
